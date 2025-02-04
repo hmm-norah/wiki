@@ -34,14 +34,11 @@ ashita.events.register('command', 'command_callback1', function (e)
 
         if(ptr == 0) then
             ptr = ashita.memory.find('ffximain.dll', 0, '8b0d????????c681??????????5f', 2, 0)
-            -- print("Location 1:" .. string.format("%X", ptr))
-            
-            ptr = ashita.memory.read_uint32(ptr);
-            -- print("Location 2:" .. string.format("%X", ptr))
 
+            ptr = ashita.memory.read_uint32(ptr);
             -- offset
             ptr = ashita.memory.read_uint32(ptr) + 36
-            -- print("Location 3:" .. string.format("%X", ptr))
+
         end
 
         local itemID = ashita.memory.read_uint16(ptr) or 0
@@ -60,8 +57,7 @@ ashita.events.register('command', 'command_callback1', function (e)
             return
         end
 
-        -- Name[2] for JP
-        local itemName = AshitaCore:GetResourceManager():GetItemById(tonumber(itemID)).Name[1]
+        local itemName = AshitaCore:GetResourceManager():GetItemById(tonumber(itemID)).LogNameSingular[1]
         -- print("Item Name: " .. itemName)
 
         -- This messes up on some items and I need to track down what it was, I Forgot
