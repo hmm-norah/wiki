@@ -1,12 +1,12 @@
 addon.name      = 'Wiki';
 addon.author    = 'Norah';
 addon.version   = '1.0';
-addon.desc      = 'Open current item or target on the HorizonXI Wiki';
-addon.link      = ''; 
+addon.desc      = 'Performs a search for the currently highlighted item or selected target on bg-wiki';
+addon.link      = 'https://github.com/hmm-norah/wiki'; 
 
 require('common');
 
-local url = "https://horizonffxi.wiki/w/index.php?search="
+local url = "https://www.bg-wiki.com/index.php?search="
 local ptr = 0
 
 
@@ -19,7 +19,6 @@ ashita.events.register('command', 'command_callback1', function (e)
     end
 
     e.blocked = true;
-
 
     if (#args == 2 and args[2]:any('target')) then
         local entMgr = AshitaCore:GetMemoryManager():GetEntity();
@@ -60,7 +59,6 @@ ashita.events.register('command', 'command_callback1', function (e)
         local itemName = AshitaCore:GetResourceManager():GetItemById(tonumber(itemID)).LogNameSingular[1]
         -- print("Item Name: " .. itemName)
 
-        -- This messes up on some items and I need to track down what it was, I Forgot
         ashita.misc.open_url(url..itemName:gsub("%s+", "_"))
         return
     end
