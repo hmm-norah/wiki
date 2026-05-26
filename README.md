@@ -1,6 +1,6 @@
-## Companion for HorizonXI wiki
+## wiki
 
-Ashita v4 plugin that allows you to search for things on the HorizonXI wiki with context-sensitive commands.
+Ashita v4 addon that allows you to use in-game data to search bg-wiki
 
 `/wiki item` to search for currently hovered item
 
@@ -11,5 +11,3 @@ Ashita v4 plugin that allows you to search for things on the HorizonXI wiki with
 I recommend you bind the first two to a hotkey [using Ashita](https://docs.ashitaxi.com/usage/commands/#command-bind)
 
 https://github.com/hmm-norah/wiki/assets/696702/7ab97e8b-0d21-41a5-a9a9-14d80e70b7ea
-
-Note: it's been about 6 years since I've done any programming so any notes on best practice are greatly appreciated. Particularly with respect to not creating variables over and over on each function call.
