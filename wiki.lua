@@ -1,7 +1,7 @@
 addon.name      = 'Wiki';
 addon.author    = 'Norah';
 addon.version   = '1.0';
-addon.desc      = 'Performs a search for the currently highlighted item or selected target on bg-wiki';
+addon.desc      = 'Search for the highlighted item, selected target, or arbitrary string on bg-wiki';
 addon.link      = 'https://github.com/hmm-norah/wiki'; 
 
 require('common');
