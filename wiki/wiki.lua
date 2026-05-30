@@ -24,7 +24,12 @@ ashita.events.register('command', 'command_callback1', function (e)
         local entMgr = AshitaCore:GetMemoryManager():GetEntity();
         local targetMgr = AshitaCore:GetMemoryManager():GetTarget();
         local index = targetMgr:GetTargetIndex(targetMgr:GetIsSubTargetActive());
-        local name = entMgr:GetName(index);
+        local name = entMgr:GetName(index) or 0;
+
+        if(name == 0) then
+            print("Something went wrong, do you have a target?")
+            return
+        end
         ashita.misc.open_url(url..name)
         return;
     end
